@@ -32,13 +32,14 @@ def projectile_motion(Vo, angle_deg, g=9.81):
     y = Vo * np.sin(angle_rad) * t - 0.5 * g * t**2
 
     # Plot trajectory
+    plt.style.use('dark_background')
     plt.figure(figsize=(8,5))
-    plt.plot(x, y, label='Projectile trajectory')
-    plt.title('Projectile Motion Trajectory')
-    plt.xlabel('Distance (m)')
-    plt.ylabel('Height (m)')
-    plt.grid(True)
-    plt.legend()
+    plt.plot(x, y, label='Projectile trajectory', color='#00FFFF', linewidth=2)
+    plt.title('Projectile Motion Trajectory', color='#00ADB5', fontweight='bold')
+    plt.xlabel('Distance (m)', color='#EEEEEE')
+    plt.ylabel('Height (m)', color='#EEEEEE')
+    plt.grid(True, linestyle='--', alpha=0.3)
+    plt.legend(facecolor='#212121', edgecolor='#EEEEEE', labelcolor='#EEEEEE')
     plt.show()
 
     return Hmax, R
